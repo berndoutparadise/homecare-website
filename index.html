@@ -262,8 +262,11 @@
     .info-list { display: flex; flex-direction: column; gap: 1.25rem; }
     .info-item { display: flex; align-items: flex-start; gap: 1rem; }
     .info-icon { width: 2.5rem; height: 2.5rem; background: var(--primary-lt); border-radius: 999px; display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0; }
-    .info-item strong { display:block; font-weight:500; }
-    .info-item span, .info-item a { color: var(--muted-fg); font-size: 1rem; }
+    .info-item strong {
+      display: block; margin-bottom: .2rem; color: var(--primary);
+      font-size: .95rem; font-weight: 600; line-height: 1.35;
+    }
+    .info-item span, .info-item a { color: var(--fg); font-size: 1rem; }
     .info-item a { overflow-wrap: anywhere; }
     .info-item > div > span { display: block; }
     .info-item a:hover { color: var(--primary); }
