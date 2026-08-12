@@ -14,9 +14,6 @@
   <meta name="geo.region" content="DE-BW" />
   <meta name="geo.placename" content="Bad Herrenalb" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
@@ -35,8 +32,8 @@
       --accent-lt:  #f5ece0;
       --border:     #e5ddd6;
       --radius:     0.75rem;
-      --serif:      'Fraunces', Georgia, serif;
-      --sans:       'Inter', system-ui, sans-serif;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -885,8 +882,9 @@
         <p>Weitere Informationen: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener">https://www.emailjs.com/legal/privacy-policy/</a></p>
       </div>
       <div class="legal-section">
-        <h2>5. Google Maps & Google Fonts</h2>
-        <p>Diese Website verwendet Google Maps zur Darstellung einer Karte sowie Google Fonts für Schriftarten. Beim Laden dieser Inhalte werden Daten (inkl. IP-Adresse) an Google übertragen. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+        <h2>5. Google Maps</h2>
+        <p>Diese Website verwendet Google Maps zur Darstellung einer Karte. Google Maps wird erst nach Ihrer ausdrücklichen Zustimmung über den Cookie-Banner geladen. Beim Laden werden Daten (inkl. IP-Adresse) an Google LLC übertragen. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Seite neu laden und Cookies ablehnen.</p>
       </div>
       <div class="legal-section">
         <h2>6. Ihre Rechte</h2>
@@ -1054,9 +1052,9 @@ function loadMap() {
 
 // ── EMAILJS FORMULAR ───────────────────────────────
 // ✏️ DEINE EMAILJS KEYS HIER EINTRAGEN:
-const EMAILJS_SERVICE  = 'service_yafiy0k';   // z.B. 'service_abc123'
-const EMAILJS_TEMPLATE = 'template_y8mlg8q';  // z.B. 'template_xyz789'
-const EMAILJS_KEY      = 'jyMW8RuiEk0h9-k4e';   // z.B. 'abcDEF123'
+const EMAILJS_SERVICE  = 'YOUR_SERVICE_ID';   // z.B. 'service_abc123'
+const EMAILJS_TEMPLATE = 'YOUR_TEMPLATE_ID';  // z.B. 'template_xyz789'
+const EMAILJS_KEY      = 'YOUR_PUBLIC_KEY';   // z.B. 'abcDEF123'
 
 function sendForm() {
   const name  = document.getElementById('f-name').value.trim();
