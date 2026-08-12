@@ -1103,7 +1103,8 @@ function sendForm() {
     console.error('EmailJS-Versand fehlgeschlagen:', error);
     btn.textContent = 'Nachricht senden';
     btn.disabled = false;
-    alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: 07083 / 5288416');
+    const detail = error?.text || error?.message || (error?.status ? `Status ${error.status}` : 'Unbekannter EmailJS-Fehler');
+    alert(`EmailJS-Fehler: ${detail}\n\nBitte rufen Sie uns direkt an: 07083 / 5288416`);
   });
 }
 
