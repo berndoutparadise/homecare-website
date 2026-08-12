@@ -1057,10 +1057,11 @@ function loadMap() {
 }
 
 // ── EMAILJS FORMULAR ───────────────────────────────
-// ✏️ DEINE EMAILJS KEYS HIER EINTRAGEN:
-const EMAILJS_SERVICE  = 'YOUR_SERVICE_ID';   // z.B. 'service_abc123'
-const EMAILJS_TEMPLATE = 'YOUR_TEMPLATE_ID';  // z.B. 'template_xyz789'
-const EMAILJS_KEY      = 'YOUR_PUBLIC_KEY';   // z.B. 'abcDEF123'
+// EmailJS-Konfiguration
+const EMAILJS_SERVICE  = 'service_yafi0k';
+const EMAILJS_TEMPLATE = 'template_y8mlg8q';
+const EMAILJS_KEY      = 'jyMW8RuiEk0h9-k4e';
+let emailjsInitialized = false;
 
 function sendForm() {
   const name  = document.getElementById('f-name').value.trim();
@@ -1077,13 +1078,29 @@ function sendForm() {
   btn.textContent = 'Wird gesendet …';
   btn.disabled = true;
 
-  emailjs.init(EMAILJS_KEY);
+  try {
+    if (typeof emailjs === 'undefined') {
+      throw new Error('EmailJS-SDK konnte nicht geladen werden.');
+    }
+    if (!emailjsInitialized) {
+      emailjs.init({ publicKey: EMAILJS_KEY });
+      emailjsInitialized = true;
+    }
+  } catch (error) {
+    console.error('EmailJS-Initialisierung fehlgeschlagen:', error);
+    btn.textContent = 'Nachricht senden';
+    btn.disabled = false;
+    alert('Der E-Mail-Dienst konnte nicht geladen werden. Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an: 07083 / 5288416');
+    return;
+  }
+
   emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, {
     from_name: name, phone, reply_to: email, message: msg
   }).then(() => {
     document.getElementById('contact-form-wrapper').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
-  }).catch(() => {
+  }).catch((error) => {
+    console.error('EmailJS-Versand fehlgeschlagen:', error);
     btn.textContent = 'Nachricht senden';
     btn.disabled = false;
     alert('Fehler beim Senden. Bitte rufen Sie uns direkt an: 07083 / 5288416');
