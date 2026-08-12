@@ -264,6 +264,7 @@
     .info-icon { width: 2.5rem; height: 2.5rem; background: var(--primary-lt); border-radius: 999px; display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0; }
     .info-item strong { display:block; font-weight:500; }
     .info-item span, .info-item a { color: var(--muted-fg); font-size: 1rem; }
+    .info-item a { overflow-wrap: anywhere; }
     .info-item > div > span { display: block; }
     .info-item a:hover { color: var(--primary); }
 
@@ -671,8 +672,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
-                <strong>HomeCare Mobiler Pflegedienst</strong>
-                <span>Ettlingerstraße 30<br>76332 Bad Herrenalb</span>
+                <strong>Adresse</strong>
+                <span>HomeCare Mobiler Pflegedienst<br>Ettlingerstraße 30<br>76332 Bad Herrenalb</span>
               </div>
             </div>
             <div class="info-item">
@@ -683,6 +684,7 @@
                 <strong>Kontakt</strong>
                 <span>Tel.: <a href="tel:070835288416">07083 / 5288416</a></span>
                 <span>Fax: 07083 / 5289252</span>
+                <span>E-Mail: <a href="mailto:jennifer.boenisch@hc-pflegedienst.com">jennifer.boenisch@hc-pflegedienst.com</a></span>
               </div>
             </div>
             <div class="info-item">
@@ -692,15 +694,7 @@
               <div>
                 <strong>Erreichbarkeit</strong>
                 <span>Mo – Fr: 09:00 – 16:00 Uhr</span>
-                <span style="font-size:.85rem">Notfall: 24h erreichbar</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <a href="mailto:jennifer.boenisch@hc-pflegedienst.com">jennifer.boenisch@hc-pflegedienst.com</a>
+                <span>Notfall: 24h erreichbar</span>
               </div>
             </div>
           </div>
@@ -1058,7 +1052,7 @@ function loadMap() {
 
 // ── EMAILJS FORMULAR ───────────────────────────────
 // EmailJS-Konfiguration
-const EMAILJS_SERVICE  = 'service_yafi0k';
+const EMAILJS_SERVICE  = 'service_yafjv0k';
 const EMAILJS_TEMPLATE = 'template_y8mlg8q';
 const EMAILJS_KEY      = 'jyMW8RuiEk0h9-k4e';
 let emailjsInitialized = false;
